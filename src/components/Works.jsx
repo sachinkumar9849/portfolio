@@ -15,6 +15,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  project_link
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -24,13 +25,13 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[560px] w-full"
       >
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-[360px]">
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover object-top rounded-2xl"
           />
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
@@ -47,16 +48,37 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+        <div className="mt-4">
+          <h3 className="text-white font-bold text-[20px]">{name}</h3>
+
+        </div>
+        <div className="flex flex-wrap justify-between mt-2 flex flex-wrap gap-2">
+          <h4 className="font-bold"> Features :</h4>
+        
+          {description.map((des_title,index) => (
+            <small
+            className="d-block w-full"
+              key={index}
+              
+            >
+             {des_title.name}
+            </small>
+          ))}
+           
+            
+        </div>
+        <div className="">
+        <h4 className="font-bold mt-3">Project Link :
+           
+           </h4>
+           <small> <a className="text-blue-300" target="__" href="https://hotelroyalimage.com.np/">https://hotelroyalimage.com.np/</a></small>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
+        <div className="flex flex-wrap justify-between mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (   
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-[14px] ${tag.color}`}style={{ width: '47%' }}
             >
               #{tag.name}
             </p>

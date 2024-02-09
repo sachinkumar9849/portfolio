@@ -113,6 +113,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.red-text-gradient {
+  color: #e33e33; /* fallback for old browsers */
+
+}
+.lightblue-gradient {
+  color: #ff7f00; /* fallback for old browsers */
+
+}
+.lightblue-gradient1 {
+  color: #bae212; /* fallback for old browsers */
+
+}
 
 /* canvas- styles */
 .canvas-loader {
